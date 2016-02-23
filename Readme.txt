@@ -1,0 +1,36 @@
+busy - ip is not avialble, a field in the NODE STRUCT
+
+if 2 child nodes are busy, so , their parent will be mark as busy; easier, quicker search
+
+request ip -> gives the smallest ip available
+
+request specific ip -> if not busy, give, else, get next available ip
+
+release ip -> just mark as not busy, do not free NODE;
+
+255->broadcast
+254->DHCP SERVER
+0->subnet
+
+user sees
+int IP[4] = {192, 168, 0, 14};
+
+0xC0 A8 00 0E
+
+in little endian
+a : 0E , 00 , A8, C0
+   	    a+1, a+2, a+3
+
+in big endian
+a : C0 , A8, 00 , 0E
+   		a+1 ,a+2,a+3
+
+struct 
+
+API
+Create
+Destroy
+Count - how many nodes are busy
+GetIP - specific ip
+ReleaseIP
+
